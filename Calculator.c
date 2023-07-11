@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-
+void introd();
 int  str_to_num(int *num1,int *num2,char *sym,char *str);
 void clear(int *num1,int *num2,char *sym,char *str,int *ans);
 void print_ans(int*ans);
@@ -16,17 +16,7 @@ int main(){
     char str[102],sym;
     int num1[50]={0},num2[50]={0},ans[100]={0};
     int i,valid,r=0,q=0;
-    printf("\t\t\t\t 50 DIGIT CALCULATOR \n\n");
-    printf("Type without spaces \n");
-    printf("\n");
-    printf("Examples:\n");
-    printf("12345678967354748+9876546877687678678678678\n");
-     printf("1234567899538783788374-8738478937937498237\n");
-     printf("123478763783847239874*34837472384723894732\n");
-     printf("1233489374983933498398095/3487384\n");
-    printf("Type exit to quit ");
-    printf("\n");
-    printf("\n");
+    introd();
     while(1){
         printf("calc< ");
         scanf("%[^\n]%*c",str);
@@ -71,6 +61,20 @@ int main(){
     }
 }
 
+void introd(){
+    printf("\t\t\t\t 50 DIGIT CALCULATOR \n\n");
+    printf("Type without spaces \n");
+    printf("\n");
+    printf("Examples:\n");
+    printf("12345678967354748+9876546877687678678678678\n");
+    printf("1234567899538783788374-8738478937937498237\n");
+    printf("123478763783847239874*34837472384723894732\n");
+    printf("1233489374983933498398095/3487384\n");
+    printf("Type exit to quit ");
+    printf("\n");
+    printf("\n");
+    
+}
 //This function will print the result
 void print_ans(int*ans){
     int fl=0;
