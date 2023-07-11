@@ -57,7 +57,7 @@ int main(){
         }
         clear(num1,num2,&sym,str,ans);
         printf("\n");
-       
+
     }
 }
 
@@ -73,7 +73,7 @@ void intro(){
     printf("Type exit to quit ");
     printf("\n");
     printf("\n");
-    
+
 }
 //This function will print the result
 void print_ans(int*ans){
@@ -141,7 +141,7 @@ int str_to_num(int *num1,int *num2,char *sym,char *str){
 
     return 1;
 }
-//This function will find the digit count of an array 
+//This function will find the digit count of an array
 int find_length(int *num){
     int fl=0,l=0;
     for(int i=0;i<50;i++){
@@ -364,18 +364,19 @@ void div(int r,int q,int *num1,int *num2){
     printf("Q=");
     for(i=0;i<c;i++){
         printf("%d",rem[i]);
+
     }
     printf("\n");
     printf("R=");
     int lf=0;
-    for(i=0;i<50;i++){
-         if(anssub[i]!=0||lf==1){
-            printf("%d",anssub[i]);
+    for(i=0;i<49;i++){
+         if(temp_num1[i]!=0||lf==1){
+            printf("%d",temp_num1[i]);
             lf=1;
         }
     }
     if(lf==0){
-        printf("%d",0); 
+        printf("%d",0);
     }
 
 }
