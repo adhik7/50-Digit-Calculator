@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-void introd();
+void intro();
 int  str_to_num(int *num1,int *num2,char *sym,char *str);
 void clear(int *num1,int *num2,char *sym,char *str,int *ans);
 void print_ans(int*ans);
@@ -16,7 +16,7 @@ int main(){
     char str[102],sym;
     int num1[50]={0},num2[50]={0},ans[100]={0};
     int i,valid,r=0,q=0;
-    introd();
+    intro();
     while(1){
         printf("calc< ");
         scanf("%[^\n]%*c",str);
@@ -61,7 +61,7 @@ int main(){
     }
 }
 
-void introd(){
+void intro(){
     printf("\t\t\t\t 50 DIGIT CALCULATOR \n\n");
     printf("Type without spaces \n");
     printf("\n");
