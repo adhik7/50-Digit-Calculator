@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+
 int  str_to_num(int *num1,int *num2,char *sym,char *str);
 void clear(int *num1,int *num2,char *sym,char *str,int *ans);
 void print_ans(int*ans);
@@ -20,17 +21,17 @@ int main(){
     printf("\n");
     printf("Examples:\n");
     printf("12345678967354748+9876546877687678678678678\n");
-     printf("1234567899538783788374-8738478937937498237\n ");
-     printf("123478763783847239874*34837472384723894732\n ");
-     printf("1233489374983933498398095/3487384\n ");
+     printf("1234567899538783788374-8738478937937498237\n");
+     printf("123478763783847239874*34837472384723894732\n");
+     printf("1233489374983933498398095/3487384\n");
     printf("Type exit to quit ");
     printf("\n");
     printf("\n");
     while(1){
         printf("calc< ");
-        gets(str);
+        scanf("%[^\n]%*c",str);
         if(str[0]=='e'&&str[1]=='x'&&str[2]=='i'&&str[3]=='t'){
-            exit(1);
+            break;
         }
         printf("\n");
         valid=str_to_num(num1,num2,&sym,str);
@@ -66,9 +67,7 @@ int main(){
         }
         clear(num1,num2,&sym,str,ans);
         printf("\n");
-        for(i=0;i<50;i++){
-            str[i]=NULL;
-        }
+       
     }
 }
 
@@ -102,9 +101,9 @@ void clear(int *num1,int *num2,char *sym,char *str,int *ans){
             ans[i]=0;
         }
         for(i=0;i<50;i++){
-            str[i]='0';
+            str[i]='\0';
         }
-        *sym=NULL;
+        *sym='\0';
 }
 
 //This function converts the input string into integers and storing it in integers array
@@ -371,6 +370,8 @@ void div(int r,int q,int *num1,int *num2){
             lf=1;
         }
     }
-
+    if(lf==0){
+        printf("%d",0); 
+    }
 
 }
