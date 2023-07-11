@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int  str_to_num(int *num1,int *num2,char *sym,char *str);
 void clear(int *num1,int *num2,char *sym,char *str,int *ans);
