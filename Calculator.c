@@ -10,6 +10,7 @@ void sub(int *ans,int *num1,int *num2);
 void mult(int *ans,int *num1,int *num2);
 void div(int r,int q,int *num1,int *num2);
 int check_same(int *temp_num1,int *temp_num2);
+
 int main(){
     char str[102],sym;
     int num1[50]={0},num2[50]={0},ans[100]={0};
@@ -18,7 +19,10 @@ int main(){
     printf("Type without spaces \n");
     printf("\n");
     printf("Examples:\n");
-    printf("12345678967354748+9876546877687678678678678\n1234567899538783788374-8738478937937498237\n123478763783847239874*34837472384723894732\n1233489374983933498398095/3487384\n");
+    printf("12345678967354748+9876546877687678678678678\n");
+     printf("1234567899538783788374-8738478937937498237\n ");
+     printf("123478763783847239874*34837472384723894732\n ");
+     printf("1233489374983933498398095/3487384\n ");
     printf("Type exit to quit ");
     printf("\n");
     printf("\n");
@@ -65,10 +69,10 @@ int main(){
         for(i=0;i<50;i++){
             str[i]=NULL;
         }
-
     }
-
 }
+
+//This function will print the result
 void print_ans(int*ans){
     int fl=0;
 
@@ -84,6 +88,8 @@ void print_ans(int*ans){
         printf("%d",0);
     }
 }
+
+//This function clears the data in input,output and resultant variables
 void clear(int *num1,int *num2,char *sym,char *str,int *ans){
     int i;
         for(i=0;i<50;i++){
@@ -100,6 +106,8 @@ void clear(int *num1,int *num2,char *sym,char *str,int *ans){
         }
         *sym=NULL;
 }
+
+//This function converts the input string into integers and storing it in integers array
 int str_to_num(int *num1,int *num2,char *sym,char *str){
     int i,j=49,l=0,fl=0;
 
@@ -130,6 +138,7 @@ int str_to_num(int *num1,int *num2,char *sym,char *str){
 
     return 1;
 }
+//This function will find the digit count of an array 
 int find_length(int *num){
     int fl=0,l=0;
     for(int i=0;i<50;i++){
@@ -142,6 +151,8 @@ int find_length(int *num){
     }
     return l;
 }
+
+//This function will find the largest number
 int find_largest(int *num1,int *num2){
 
     for(int i=0;i<50;i++){
@@ -154,6 +165,7 @@ int find_largest(int *num1,int *num2){
     }
     return 1;
 }
+//This function will check whether both numbers are same or not
 int check_same(int *temp_num1,int *temp_num2){
     for(int i=0;i<50;i++){
         if(temp_num1[i]!=temp_num2[i]){
@@ -162,6 +174,8 @@ int check_same(int *temp_num1,int *temp_num2){
     }
     return 1;
 }
+
+//This function check whether a result is positive or negative in subtraction
 int neg_or_pos(int *num1,int *num2){
     int l1,l2,neg=0,large;
     l1=find_length(num1);
@@ -187,6 +201,7 @@ int neg_or_pos(int *num1,int *num2){
     return neg;
 }
 
+//This function performs addition
 void add(int *ans,int *num1,int *num2){
     int i=49,carry=0,sum;
     while(i>=0){
@@ -197,6 +212,7 @@ void add(int *ans,int *num1,int *num2){
     }
 }
 
+//This function performs subtraction
 void sub(int *ans,int *num1,int *num2){
     int i=49,j=1,borrow,sub;
     while(i>=0){
@@ -220,11 +236,11 @@ void sub(int *ans,int *num1,int *num2){
             goto this;
 
         }
-
     i--;
     }
 }
 
+//This function performs multiplation
 void mult(int *ans,int *num1,int *num2){
     int carry=0,carry2=0,sum,i,j,k=49,z;
     for(i=49;i>=0;i--){
@@ -251,9 +267,9 @@ void mult(int *ans,int *num1,int *num2){
             break;
         }
     }
-
-
 }
+
+//This function performs division
 void div(int r,int q,int *num1,int *num2){
     int i,l1,l2,temp_num1[50]={0},temp_num2[50]={0},largest;
     int rem[50]={0},prev[50]={0},ansmult[50]={0},anssub[50]={0};
